@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autorization page</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Вхід</h2>
+    <form id="login-form">
+      <label for="username">Логін:</label>
+      <input type="text" id="username" class="input-field" placeholder="Введіть логін">
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" class="input-field" placeholder="Введіть пароль">
+
+      <button type="submit" class="btn">Увійти</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (username === "admin" && password === "admin123") {
+        message.style.color = "green";
+        message.textContent = "Ви ввійшли";
+        
+        setTimeout(() => {
+          window.location.href = "/pages/MainPage.html";
+        }, 2000);
+      } else {
+        message.style.color = "red";
+        message.textContent = "Невірний логін або пароль";
+      }
+    });
+  </script>
+
+</body>
+</html>

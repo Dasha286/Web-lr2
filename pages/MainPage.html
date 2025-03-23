@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main page</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/pages/AutorizationPage.html">Ввійти</a></li>
+        <li><a href="/pages/BasketPage.html">Кошик</a></li>
+        <li><a href="/pages/MainPage.html">Головна</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="tab-buttons">
+    <button class="active">Авіаквитки</button>
+    <button>Залізничні квитки</button>
+    <button>Квитки на автобус</button>
+    <button>Готелі</button>
+    <button>Страхування</button>
+  </div>
+
+  <!-- Radio-кнопки для вибору маршруту -->
+  <div class="trip-options">
+    <label><input type="radio" name="trip-type" value="round-trip" checked> Туди й назад</label>
+    <label><input type="radio" name="trip-type" value="one-way"> В один бік</label>
+    <label><input type="radio" name="trip-type" value="multi-city"> Складний маршрут</label>
+  </div>
+
+  <!-- Форма пошуку -->
+  <div class="search-container" id="search-form">
+    <div id="normal-route">
+      <input type="text" placeholder="Звідки">
+      <input type="text" placeholder="Куди">
+      <input type="date">
+      <input type="text" placeholder="Пасажири, клас">
+    </div>
+
+    <!-- Форма для складного маршруту (прихована за замовчуванням) -->
+    <div id="multi-city-route" style="display: none;">
+      <div class="multi-city-row">
+        <input type="text" placeholder="Звідки">
+        <input type="text" placeholder="Куди">
+        <input type="date">
+        <button class="remove-btn">✖</button>
+      </div>
+      <div class="multi-city-row">
+        <input type="text" placeholder="Звідки">
+        <input type="text" placeholder="Куди">
+        <input type="date">
+        <button class="remove-btn">✖</button>
+      </div>
+      <button id="add-route-btn">Додати ще рейс</button>
+    </div>
+    <button>Знайти</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Всі права захищені. tickets.com</p>
+  </footer>
+
+  <script>
+    // Отримуємо елементи
+    const radioButtons = document.querySelectorAll('input[name="trip-type"]');
+    const normalRoute = document.getElementById("normal-route");
+    const multiCityRoute = document.getElementById("multi-city-route");
+    const addRouteBtn = document.getElementById("add-route-btn");
+
+    // Обробка зміни маршруту
+    radioButtons.forEach(radio => {
+      radio.addEventListener("change", function() {
+        if (this.value === "multi-city") {
+          normalRoute.style.display = "none";
+          multiCityRoute.style.display = "block";
+        } else {
+          normalRoute.style.display = "block";
+          multiCityRoute.style.display = "none";
+        }
+      });
+    });
+
+    // Додавання нового рейсу в складний маршрут
+    addRouteBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      const newRoute = document.createElement("div");
+      newRoute.classList.add("multi-city-row");
+      newRoute.innerHTML = `
+        <input type="text" placeholder="Звідки">
+        <input type="text" placeholder="Куди">
+        <input type="date">
+        <button class="remove-btn">✖</button>
+      `;
+      multiCityRoute.insertBefore(newRoute, addRouteBtn);
+    });
+
+    // Видалення рейсу
+    multiCityRoute.addEventListener("click", function(event) {
+      if (event.target.classList.contains("remove-btn")) {
+        event.target.parentElement.remove();
+      }
+    });
+  </script>
+
+</body>
+</html>

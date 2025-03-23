@@ -1,0 +1,242 @@
+ 
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+ display: block;
+}
+body {
+ line-height: 1;
+}
+ol, ul {
+ list-style: none;
+}
+blockquote, q {
+ quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content: '';
+ content: none;
+}
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+ /* вапиртьбю */  
+ html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #8000ff;
+  font-family: Arial, sans-serif;
+  color: #ffb6c1;
+  justify-content: center; /* Центрує по горизонталі */
+  align-items: center; /* Центрує по вертикалі */
+  height: 100vh; /* Робить сторінку на всю висоту екрану */
+  margin: 0; 
+}
+    header {
+      padding: 20px;
+      background-color: #8000ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+    .logo a {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-links li {
+      list-style: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.3s;
+    }
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .user-options a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: 15px;
+    }
+    .search-container {
+      display: flex;
+      justify-content: space-between; /* Рівний розподіл між елементами */
+      align-items: center;
+      gap: 10px; /* Відступ між полями */
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 900px; /* Змінюй за необхідності */
+      margin: 0 auto;
+    }
+    
+    .search-container input {
+      flex: 1; /* Рівномірний розподіл ширини */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      min-width: 150px; /* Мінімальна ширина для кращого вигляду */
+    }
+    
+    .search-container button {
+      background: rgb(0, 4, 255);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      min-width: 150px; /* Ширина кнопки, щоб була як інші поля */
+      text-align: center;
+    }
+    
+    .search-container input, .search-container button {
+      padding: 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+     
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tab-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .tab-buttons button.active, .tab-buttons button:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    footer {
+      background-color: #000080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%; /* Розтягує футер на всю ширину */
+      margin-top: auto; /* Робить футер прилипаючим до низу */
+    }
+    /* аоссрс */
+
+
+    .login-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      text-align: center;
+    }
+    
+    /* Окремий клас для input */
+    .input-field {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    /* Окремий клас для textarea */
+    .textarea-field {
+      width: 100%;
+      height: 100px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    /* Окремий клас для select */
+    .select-field {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    /* Окремий клас для кнопки */
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    /* Ефект при наведенні на кнопку */
+    .btn:hover {
+      background: darkblue;
+    }
+    
+    #message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+
+
+
+
+
+
+    
